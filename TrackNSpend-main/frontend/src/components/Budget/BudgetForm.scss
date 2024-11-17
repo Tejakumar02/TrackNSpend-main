@@ -1,0 +1,226 @@
+.budget {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: self-start;
+    gap: 1rem;
+
+    @media screen and (max-width: 450px) {
+        width: 100%;
+        padding: 1rem 2rem;
+        flex-direction: column-reverse;
+    }
+
+    .budgetform-container {
+        width: 33%;
+
+        @media screen and (max-width: 450px) {
+            width: 80%;
+            padding: 0 2rem;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+
+            div {
+                display: flex;
+                align-items: center;
+            }
+
+            h4 {
+                margin: 0;
+                font-size: 1.2rem;
+
+                @media screen and (max-width: 450px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    img {
+        width: 24px;
+    }
+
+    .budget-form {
+        input {
+            width: 60%;
+            padding: 10px;
+            margin: 0;
+
+            @media screen and (max-width: 450px) {
+                width: 45%;
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            font-size: 1rem;
+            align-items: center;
+        }
+
+        select {
+            width: 60%;
+            padding: 10px;
+            border-radius: 0.5rem;
+
+            option {
+                font-size: 1rem;
+            }
+        }
+
+        .buttons {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .budget-expense-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1rem 0;
+
+            .budget-expense-container {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                gap: 1rem;
+        
+                input {
+                    width: 40%;
+                }
+            }
+        }
+
+        .total-balance {
+            margin: 1rem 0 0;
+            display: flex;
+            color: $raven;
+            justify-content: space-between;
+
+            .total {
+                span {
+                    color: $primary;
+                }
+            }
+
+            .balance {
+                span {
+                    color: $tertiary;
+                }
+            }
+        }
+    }
+
+    .budgetview-container {
+        width: 33%;
+
+        @media screen and (max-width: 450px) {
+            width: 80%;
+            padding: 0 2rem;
+        }
+        
+        .budget-view {
+            padding: 1rem;
+            background: $background-color;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            .content {
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                h4 {
+                    color: $primary;
+                    margin: 0.5rem 0;
+                }
+
+                .budget-table, .expenditure-table {
+                    background: $secondary;
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    @media screen and (max-width: 450px) {
+                        width: 80%;
+                    }
+                }
+
+                .budget-table th, .budget-table td, .expenditure-table th, .expenditure-table td {
+                    border: 1px solid $raven;
+                    padding: 8px;
+                    text-align: center;
+                }
+            }
+
+            h4 {
+                color: $raven;
+                font-size: 1.2rem;
+            }
+
+            button {
+                color: $error;
+                text-decoration: underline;
+                font-weight: bold;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                background: $background-color;
+            }
+        }
+    }
+
+    .no-budgets {
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        background: $background-color;
+        padding: 1rem;
+        align-items: center;
+
+        @media screen and (max-width: 450px) {
+            width: 90%;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0;
+            gap: 1rem;
+        }
+
+        img {
+            width: 48px;
+            margin-bottom: 1rem;
+
+            @media screen and (max-width: 450px) {
+                width: 36px;
+                margin-bottom: 0;
+            }
+        }
+
+        h3, span {
+            text-align: center;
+        }
+    }
+
+    .widgets {
+        display: flex;
+        width: 20%;
+        padding: 0;
+        flex-direction: row;
+
+        @media screen and (max-width:450px) {
+            //flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.authentication {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        padding: 0 0 1rem 1rem;
+    }
+
+    button {
+        font-weight: bold;
+        color: $raven;
+        background: none;
+        width: 136px;
+        height: 48px;
+        cursor: pointer;
+        border: 2px solid $raven;
+        margin: 0 2rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8rem 2rem 2rem;
+
+        @media screen and (max-width: 450px) {
+            flex-direction: column;
+            padding: 14rem 1rem 1rem;
+        }
+
+        img {
+            width: 35%;
+            height: auto;
+            margin: auto;
+
+            @media screen and (max-width: 450px) {
+                width: 70%;
+            }
+        }
+    }
+
+    form {
+        @media screen and (max-width: 450px) {
+            width: 70%;
+        }
+
+        button {
+            background: #212121;
+            border: #212121;
+            border-radius: 0.5rem;
+            padding: 10px;
+            margin: auto;
+            width: fit-content;
+            color: $background-color;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .password-container, .set-password-container {
+            display: flex;
+            position: relative;
+
+            img {
+                width: 1.5rem;
+                height: 1.5rem;
+                top: 1rem;
+                cursor: pointer;
+                right: 8rem;
+                position: absolute;
+
+                @media screen and (max-width: 450px) {
+                    right: 2.5rem;
+                    top: 0.5rem;
+                }
+            }
+        }
+    }
+}

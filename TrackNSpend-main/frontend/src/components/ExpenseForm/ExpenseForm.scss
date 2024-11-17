@@ -1,0 +1,185 @@
+.home {
+    .container {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0 1.5rem;
+
+        @media only screen and (max-width: 450px) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .expenseform-container, .budgetform-container {
+            background: $background-color;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                justify-content: space-between;
+                padding: 0.5rem 1rem;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                }
+
+                h4 {
+                    margin: 0;
+                    font-size: 1.2rem;
+
+                    @media screen and (max-width: 450px) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        
+            img {
+                width: 24px;
+                height: 24px;
+                padding-right: 8px;
+                cursor: pointer;
+            }
+
+            .content {
+                form {
+                    width: 80%;
+                    margin: 1rem 2rem;
+                    padding: 0;
+
+                    h3 {
+                        margin: 0;
+                    }
+
+                    label {
+                        width: 20%;
+                    }
+
+                    input {
+                        width: 65%;
+                        padding: 10px;
+                        margin: 0;
+
+                        @media screen and (max-width: 450px) {
+                            width: 75%;
+                        }
+                    }
+
+                    input::placeholder {
+                        color: $background-color;
+
+                        @media screen and (max-width: 450px) {
+                            color: $raven;
+                        }
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        @media screen and (max-width: 450px) {
+                            gap: 1rem;
+                        }
+
+                        .label {
+                            display: flex;
+                            justify-content: flex-start;
+
+                            label {
+                                @media screen and (max-width: 450px) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    button {
+                        border-radius: 0.5rem;
+                        width: 40%;
+                        padding: 0.5rem;
+                        background: $primary;
+                        align-self: center;
+                        border: $primary;
+                        color: $background-color;
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: $tertiary;
+                        }
+
+                        @media screen and (max-width: 450px) {
+                            width: 60%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .list-expenses {
+        width: 30%;
+        padding: 1rem 0;
+
+        @media screen and (max-width: 450px) {
+            width: 90%;
+            padding: 0;
+        }
+
+        .show-buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    .no-expenses {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        background: $background-color;
+        padding: 1rem;
+        align-items: center;
+        margin-top: 1rem;
+
+        @media screen and (max-width: 450px) {
+            width: 90%;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0;
+            gap: 1rem;
+        }
+
+        img {
+            width: 48px;
+            margin-bottom: 1rem;
+
+            @media screen and (max-width: 450px) {
+                width: 36px;
+                margin-bottom: 0;
+            }
+        }
+
+        h3, span {
+            text-align: center;
+        }
+    }
+
+    .additional-info {
+        width: 35%;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @media only screen and (max-width: 450px) {
+            display: none;
+        }
+    }
+}
