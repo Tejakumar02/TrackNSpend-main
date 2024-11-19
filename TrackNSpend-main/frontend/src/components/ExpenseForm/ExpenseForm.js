@@ -4,19 +4,21 @@ import axios from "axios";
 import Date from '../../assets/date.svg';
 import Place from '../../assets/place.svg';
 import Amount from '../../assets/amount.svg';
+import Spent from '../../assets/Spenton.svg';
 
 const ExpenseForm = () => {
     const { dispatch } = useExpenseContext()
     const [date, setDate] = useState('')
     const [place, setPlace] = useState('')
     const [amount, setAmount] = useState('')
+    const [Spenton, setSpenton] = useState('')
     const [emptyFields, setEmptyFields] = useState([]);
     const token = sessionStorage.getItem('token');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const expense = { date, place, amount }
+        const expense = { date, place, amount, Spenton }
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_APPLICATION_URL}/api`, expense, {
@@ -30,7 +32,9 @@ const ExpenseForm = () => {
                 setDate('');
                 setPlace('');
                 setAmount('');
+                setSpenton('');
                 setEmptyFields([]);
+                
                 dispatch({type: 'CREATE_EXPENSES', payload: result})
                 dispatch({
                     type: 'SHOW_TOAST',
@@ -100,6 +104,14 @@ const ExpenseForm = () => {
                 </div>
                 <input type="number" onChange={(e) => setAmount(e.target.value)} value={amount} placeholder="Amount"
                     min="0" className={emptyFields.includes('Amount') ? 'error' : ''} />
+            </div>
+            <div>
+                <div className="label">
+                    <img src={Spent}/>
+                    <label>Spent on:</label>
+                </div>
+                <input type="text" onChange={(e) => setSpenton(e.target.value)} value={Spenton} placeholder="Spent on"
+                    className={emptyFields.includes('Spent on') ? 'error' : ''} />
             </div>
             <button>Add Expense</button>
         </form>

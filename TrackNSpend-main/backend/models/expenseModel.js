@@ -15,6 +15,11 @@ const expenseSchema = new Schema({
         type: Number,
         required: true
     },
+
+    Spenton: {
+        type: String,
+        required: true       
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

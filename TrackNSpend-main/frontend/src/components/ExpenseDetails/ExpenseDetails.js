@@ -62,7 +62,8 @@ const ExpenseDetails = ({expense}) => {
         const response = await axios.patch(`${process.env.REACT_APP_APPLICATION_URL}/api/${expense._id}`, {
             date: editedExpense.date,
             place: editedExpense.place,
-            amount: editedExpense.amount
+            amount: editedExpense.amount,
+            Spenton:editedExpense.Spenton
         })
 
         if(response.status === 200) {
@@ -120,7 +121,11 @@ const ExpenseDetails = ({expense}) => {
                     <div className="section">
                         {showEditOption && <img src={Amount}/>}
                         {showEditOption ? <input type="number" name="amount" value={editedExpense.amount} onChange={handleChange} /> : <p><strong>Amount: </strong>{expense.amount}</p>}
-                    </div>                
+                    </div>   
+                    <div className="section">
+                        {showEditOption && <img src={Spenton}/>}
+                        {showEditOption ? <input type="text" name="Spenton" value={editedExpense.Spenton} onChange={handleChange} /> : <p><strong>Spent On: </strong>{expense.Spenton}</p>}
+                    </div>            
                 </div>
                 <div className="modify-expense">
                     <img src={Edit} onClick={displayEditField}/>

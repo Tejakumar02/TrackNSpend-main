@@ -15,7 +15,7 @@ const getAllExpenses = async(req, res) => {
 
 //Create a new expense
 const createExpense = async(req, res) => {
-    const {date, place, amount} = req.body
+    const {date, place, amount, Spenton} = req.body
     const user = req.user.id
     let emptyFields = []
 
@@ -28,14 +28,16 @@ const createExpense = async(req, res) => {
     if(!amount) {
         emptyFields.push('Amount')
     }
-
+    if(!Spenton){
+        emptyFields.push('Spent on')
+    }
     if (emptyFields.length > 0) {
         return res.status(400).json({error: 'Please fill all the fields', emptyFields})
     }
     else {
         //Add doc to DB
         try {
-            const expense = await Expense.create({date, place, amount, user})
+            const expense = await Expense.create({date, place, amount, Spenton, user})
             res.status(200).json(expense)
         }
         catch(error) {
